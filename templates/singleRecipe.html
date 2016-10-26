@@ -1,0 +1,82 @@
+<html>
+<head>
+  <title>FridgeOman Admin Panel</title>
+  <link href="{{url_for('static',filename='css/bootstrap_flatly.min.css')}}" rel="stylesheet">
+  <style>
+    @-ms-viewport{
+      width: device-width;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+   <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+       <span class="sr-only">Toggle navigation</span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+     </button>
+     <a class="navbar-brand" href="/">Fridge-O-Man</a>
+   </div>
+
+   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+    <form class="navbar-form navbar-left" role="search">
+     <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+</div>
+</nav>
+</div>
+
+<div class="container">
+  <div class="alert alert-dismissible alert-info">
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <strong>You can also give these a shot : </strong> 
+    <a href="/searchVegOrNonVeg/Non-veg" class="alert-link">Non-Veg</a> ,
+    <a href="/searchVegOrNonVeg/Veg" class="alert-link">Veg</a> ,
+    <a href="/searchByCuisine/European" class="alert-link">European</a> ,
+    <a href="/searchByCuisine/Chinese" class="alert-link">Chinese</a> ,
+    <a href="/searchByMealTyp/Dinner" class="alert-link">Dinner</a> 
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 thumbnail">
+      <h1>{{recipes['recptitle']}}</h1> 
+      <div class="col-lg-6">
+        <img class="img-responsive" src = "../static/img/Falafel.jpg" alt = "Generic"/>
+      </div>
+      <div class="col-lg-6">
+
+        <h3><span class="label label-default">{{recipes['vegOrNot']}}</span></h3>
+        {% for snglIngr in recipes['ingsListforSearch'] %}
+        <span class="label label-success" style="font-size:1em">{{snglIngr}}</span>
+        {% endfor %}
+        <h3><a href="#">Serves&nbsp<span class="badge">{{recipes['srvngSize']}} </span></a></h3>
+        <h3><a href="#">Cooking Time&nbsp<span class="badge">{{recipes['cookngTime']}} </span></a></h3>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="alert alert-success">
+          <h4>Directions</h4> 
+        </div>
+        <p>{{recipes['recpDesc']}}</p>
+        {{recipes['imgPath']}} 
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript" src="{{url_for('static',filename='js/jquery-2.1.1.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>FridgeOman Admin Panel</title>
+  <link href="{{url_for('static',filename='css/bootstrap_flatly.min.css')}}" rel="stylesheet">
+  <style>
+    @-ms-viewport{
+      width: device-width;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="col-lg-4">
+    <h1>Recipe List</h1>
+    <ul>
+      {% for singlRecipe in recipes %}
+      <li>
+        <a href="/recipe/{{singlRecipe['_id']}}">Recipe ID {{ singlRecipe['_id'] }}</a>:{{ singlRecipe['recptitle'] }}
+        {% if singlRecipe['actvStatus'] %} &mdash; 
+        <form method="POST" action="/recipe/{{singlRecipe['_id']}}">
+          <input type="submit" value="Active" class="btn btn-success btn-xs">
+        </form> 
+        {% else %} &mdash; 
+        <form method="POST" action="/recipe/{{singlRecipe['_id']}}">
+          <input type="submit" value="Inactive" class="btn btn-danger btn-xs">
+        </form>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <script type="text/javascript" src="{{url_for('static',filename='js/jquery-2.1.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+
+</body>
+</html>

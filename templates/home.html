@@ -1,0 +1,123 @@
+ <html>
+ <head>
+ 	<title>FridgeOman Admin Panel</title>
+ 	<link href="{{url_for('static',filename='css/bootstrap_flatly.min.css')}}" rel="stylesheet">
+ 	<style>
+ 		@-ms-viewport{
+ 			width: device-width;
+ 		}
+ 	</style>
+ </head>
+ <body>
+ 	<div class="container">
+ 		<nav class="navbar navbar-inverse">
+ 			<div class="container-fluid">
+ 				<div class="navbar-header">
+ 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+ 						<span class="sr-only">Toggle navigation</span>
+ 						<span class="icon-bar"></span>
+ 						<span class="icon-bar"></span>
+ 						<span class="icon-bar"></span>
+ 					</button>
+ 					<a class="navbar-brand" href="/">Fridge-O-Man</a>
+ 				</div>
+
+ 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+ 					<form class="navbar-form navbar-left" role="search">
+ 						<div class="form-group">
+ 							<input type="text" class="form-control" placeholder="Search">
+ 						</div>
+ 						<button type="submit" class="btn btn-default">Submit</button>
+ 					</form>
+ 				</div>
+ 			</div>
+ 		</nav>
+ 	</div>
+
+ 	<div class="container">
+ 		<form class="form-horizontal col-lg-5 thumbnail" method="POST" action="search_from_usr">
+ 			<h3><span class="label label-info">So what do we cook today. .</span></h3> <br/>
+ 			<div class="form-group">
+ 				<div class="col-lg-4">
+ 					<input type="text" class="form-control" id="ing1" placeholder="ingredient 1" name="ing1">
+ 				</div>
+ 				<div class="col-lg-4">
+ 					<input type="text" class="form-control" id="ing2" placeholder="ingredient 2" name="ing2">
+ 				</div>
+ 				<div class="col-lg-4">
+ 					<input type="text" class="form-control" id="ing3" placeholder="ingredient 3" name="ing3">
+ 				</div>
+ 				<div class="col-lg-4">
+ 					<input type="text" class="form-control" id="ing4" placeholder="ingredient 4" name="ing4">
+ 				</div>	
+ 				<div class="col-lg-4">
+ 					<input type="text" class="form-control" id="ing5" placeholder="ingredient 5" name="ing5">
+ 				</div>
+ 				<div class="col-lg-4">
+ 					<input type="text" class="form-control" id="ing6" placeholder="ingredient 6" name="ing6">
+ 				</div>
+ 				<div class="col-lg-4">
+ 					<input type="text" class="form-control" id="ing7" placeholder="ingredient 7" name="ing7">
+ 				</div>	
+ 				<div class="col-lg-4">
+ 					<input type="text" class="form-control" id="ing8" placeholder="ingredient 8" name="ing8">
+ 				</div>
+ 				<div class="col-lg-4">
+ 					<input type="text" class="form-control" id="ing9" placeholder="ingredient 9" name="ing9">
+ 				</div>
+ 			</div>
+ 			<div class="form-group pull-right">
+ 				<div class="col-lg-4">
+ 					<button type="submit" class="btn btn-primary">Find recipes</button>
+ 				</div>
+ 			</div>
+ 		</form>
+
+ 		<div class="col-lg-1"></div>
+
+ 		<form class="form-horizontal col-lg-6 thumbnail" method="POST" action="create_recipe">
+ 			<h3><span class="label label-warning">My fridge. .</span></h3> <br/>
+ 			<div class="form-group">
+ 				<div class="col-lg-12">
+ 					<p>
+ 						<span class="label label-success">chickpeas&nbsp<span class="badge">3 lbs</span></span>&nbsp
+ 						<span class="label label-success">cumin&nbsp<span class="badge">300 gms</span></span>&nbsp
+ 						<span class="label label-success">coriander&nbsp<span class="badge">3 stalks</span></span>&nbsp
+ 						<span class="label label-success">tomato&nbsp<span class="badge">3 lbs</span></span>&nbsp
+ 						<span class="label label-success">potato&nbsp<span class="badge">5 lbs</span></span>&nbsp
+ 						<span class="label label-success">spinach&nbsp<span class="badge">2 lbs</span></span>&nbsp
+ 					</p>
+ 				</div>
+ 			</div>
+ 			<div class="col-lg-12">
+ 				<div class="form-group">
+ 					<div class="col-lg-6">
+ 						<select class="form-control" id="mealType" name="mealType">
+ 							<option>cooking time(mins)</option>
+ 							<option>20</option>
+ 							<option>30</option>
+ 							<option>45</option>
+ 						</select>
+ 					</div>
+ 					<div class="col-lg-6">
+ 						<select class="form-control" id="mealType" name="mealType">
+ 							<option>Serving Size</option>
+ 							<option>1</option>
+ 							<option>2</option>
+ 							<option>3</option>
+ 							<option>4</option>
+ 						</select>
+ 					</div>
+ 				</div>
+ 			</div>
+ 			<div class="form-group pull-right">
+ 				<div class="col-lg-4">
+ 					<button type="submit" class="btn btn-primary">Ask Fridge-O-Man</button>
+ 				</div>
+ 			</div>
+ 		</form>
+ 	</div>
+ 	<script type="text/javascript" src="{{url_for('static',filename='js/jquery-2.1.1.min.js')}}"></script>
+ 	<script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+ </body>
+ </html>

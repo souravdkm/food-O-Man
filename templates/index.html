@@ -1,0 +1,29 @@
+ <html>
+ <head>
+ 	<title>FridgeOman Home</title>
+ 	<link href="{{url_for('static',filename='css/bootstrap_flatly.min.css')}}" rel="stylesheet">
+ 	<link href="{{url_for('static',filename='css/pinterestlike.css')}}" rel="stylesheet">
+ 	<style>
+ 		@-ms-viewport{
+ 			width: device-width;
+ 		}
+ 	</style>
+ </head>
+ <body>
+ 	
+ 	{% block topNav %}{% endblock %}
+ 	<div class="container">
+ 		{% block ingrLst %}{% endblock %}
+ 	</div>
+ 	<div class="container">
+ 		{% block srchByIngr %}{% endblock %}
+
+ 		<div class="col-lg-1"></div>
+
+ 		{% block srchByFridge %}{% endblock %}
+ 	</div>
+ 	<script type="text/javascript" src="{{url_for('static',filename='js/jquery-2.1.1.min.js')}}"></script>
+ 	<script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+ 	<script type="text/javascript" src="{{url_for('static',filename='js/pinterestlike.js')}}"></script>
+ </body>
+ </html>

@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>FridgeOman Admin Panel</title>
+  <link href="{{url_for('static',filename='css/bootstrap_flatly.min.css')}}" rel="stylesheet">
+  <style>
+    @-ms-viewport{
+      width: device-width;
+    }
+  </style>
+</head>
+<body>
+  <form class="form-horizontal col-lg-4" method="POST" action="create_recipe">
+   <h3> Welcome to Admin-O-Man, {{ user_name }}</h3>
+   <div class="form-group">
+    <div class="col-lg-5">
+      <h4>Create a recipie</h4>
+    </div>
+    <div class="col-lg-7">
+      <div class="col-lg-6">
+        <label name="recpId">Rcp_Id : 1423</label>
+      </div>
+      <div class="col-lg-6">
+        <label name="views">Views : 78</label>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="radio col-lg-6">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="0" checked="">
+          Active
+        </label>
+      </div>
+      <div class="radio col-lg-6">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="1">
+          Inactive
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-8">
+      <input type="text" class="form-control" id="rescpTitle" placeholder="recipe title" name="recpTitle">
+    </div>
+    <div class="col-lg-4">
+      <select class="form-control" id="mealType" name="mealType">
+        <option>Veg</option>
+        <option>Non-veg</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-12">
+      <textarea class="form-control" rows="3" id="recpIngr" placeholder="ingredients:quantity (comma separated)" name="recpIngr"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-12">
+      <textarea class="form-control" rows="7" id="recpDesc" placeholder="cooking steps" name="recpDesc"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-6">
+      <select class="form-control" id="cusnTyp" name="cusnTyp">
+        <option>--cuisine--</option>
+        <option>Indian</option>
+        <option>Chinese</option>
+        <option>Inter-continental</option>
+        <option>European</option>
+      </select>
+    </div>
+    <div class="col-lg-6">
+      <input type="text" class="form-control" id="authrName" placeholder="recipe author name" name="authrName">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-6">
+      <input type="text" class="form-control" id="srvngSize" placeholder="serving size (eg 1-2 or 2-3)" name="srvngSize">
+    </div>
+    <div class="col-lg-6">
+      <input type="text" class="form-control" id="cookngTime" placeholder="cooking time (eg 1 hr 20 mins or 30 mins)" name="cookngTime">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-6">
+      <input type="text" class="form-control" id="imgPath" placeholder="imagePath/imageName.extension" name="imgPath">
+    </div>
+    <div class="col-lg-6">
+      <input type="text" class="form-control" id="vidUrl" placeholder="video url" name="vidUrl">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-10">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+
+<script type="text/javascript" src="{{url_for('static',filename='js/jquery-2.1.1.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+
+</body>
+</html>
